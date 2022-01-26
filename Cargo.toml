@@ -1,0 +1,20 @@
+[package]
+name = "near-smart-contract-rust-template"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jacob Lindahl <jacob@near.foundation>"]
+
+[dependencies]
+near-sdk = "4.0.0-pre.6"
+near-contract-standards = "4.0.0-pre.6"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+codegen-units = 1
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+overflow-checks = true
