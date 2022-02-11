@@ -5,8 +5,8 @@ edition = "2021"
 authors = ["Jacob Lindahl <jacob@near.foundation>"]
 
 [dependencies]
-near-sdk = "4.0.0-pre.6"
-near-contract-standards = "4.0.0-pre.6"
+near-sdk = "4.0.0-pre.7"
+near-contract-standards = "4.0.0-pre.7"
 
 [lib]
 crate-type = ["cdylib"]
