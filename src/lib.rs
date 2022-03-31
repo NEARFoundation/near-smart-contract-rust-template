@@ -1,11 +1,3 @@
-use near_sdk::{
-    borsh::{self, *},
-    collections::*,
-    json_types::*,
-    serde::{self, *},
-    *,
-};
-
 mod utils;
 
 mod contract;
@@ -13,8 +5,7 @@ pub use contract::*;
 
 #[cfg(test)]
 mod tests {
-    use crate::*;
-    use near_sdk::{test_utils::*, testing_env};
+    use near_sdk::{test_utils::*, testing_env, AccountId};
 
     const ONE_NEAR: u128 = u128::pow(10, 24);
 

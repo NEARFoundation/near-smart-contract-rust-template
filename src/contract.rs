@@ -1,8 +1,11 @@
-use crate::*;
+use near_sdk::{
+    borsh::{self, BorshDeserialize, BorshSerialize},
+    near_bindgen, BorshStorageKey, PanicOnDefault,
+};
 
 #[derive(BorshStorageKey, BorshSerialize)]
 enum StorageKey {
-    ITEM,
+    Item,
 }
 
 #[near_bindgen]
