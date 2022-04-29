@@ -5,9 +5,7 @@ pub use contract::*;
 
 #[cfg(test)]
 mod tests {
-    use near_sdk::{test_utils::*, testing_env, AccountId};
-
-    const ONE_NEAR: u128 = u128::pow(10, 24);
+    use near_sdk::{test_utils::*, testing_env, AccountId, ONE_NEAR};
 
     fn contract_account() -> AccountId {
         "contract".parse::<AccountId>().unwrap()
