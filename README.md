@@ -4,7 +4,7 @@ Project structure for writing smart contracts in Rust for NEAR Protocol
 
 # Required Software
 
-- Rust 1.60 + cargo
+- Rust 1.61 + cargo
 - Node.js
 - NEAR CLI 3.2
 
