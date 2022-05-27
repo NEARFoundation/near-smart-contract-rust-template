@@ -1,6 +1,7 @@
 mod contract;
 pub use contract::*;
 
+#[allow(dead_code, unused)]
 #[cfg(test)]
 mod tests {
     use near_sdk::{test_utils::*, testing_env, AccountId, ONE_NEAR};

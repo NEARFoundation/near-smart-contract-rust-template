@@ -3,6 +3,7 @@ use near_sdk::{
     near_bindgen, BorshStorageKey, PanicOnDefault,
 };
 
+#[allow(unused)]
 #[derive(BorshStorageKey, BorshSerialize)]
 enum StorageKey {
     Item,
