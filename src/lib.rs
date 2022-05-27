@@ -1,5 +1,3 @@
-mod utils;
-
 mod contract;
 pub use contract::*;
 
