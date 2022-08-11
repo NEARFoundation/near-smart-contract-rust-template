@@ -523,9 +523,9 @@ dependencies = [
 
 [[package]]
 name = "near-contract-tools"
-version = "0.4.0"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "100c47bee984cd95797a00a288fd6caeb4efde36901cf4e60089f2bfef3f3bfc"
+checksum = "039b69bfa9939d76ab24f11a6544b6d44d0bd92cfa915ad8ecc652fcaa83f3c0"
 dependencies = [
  "near-contract-tools-macros",
  "near-sdk",
@@ -535,13 +535,17 @@ dependencies = [
 
 [[package]]
 name = "near-contract-tools-macros"
-version = "0.4.0"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f7d9d91e0b0da832f4a4e2b1a7a440cdbe37357186f6d2f6969a9f3710ff4896"
+checksum = "d7b5475ae25c7317382bba03c5da047c75d5e0037f7cad7bef1de8b17ba4b4bf"
 dependencies = [
+ "base64 0.13.0",
  "darling",
  "heck",
+ "proc-macro2",
  "quote",
+ "strum",
+ "strum_macros",
  "syn",
 ]
 
@@ -1099,18 +1103,18 @@ checksum = "73473c0e59e6d5812c5dfe2a064a6444949f089e20eec9a2e5506596494e4623"
 
 [[package]]
 name = "strum"
-version = "0.24.0"
+version = "0.24.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e96acfc1b70604b8b2f1ffa4c57e59176c7dbb05d556c71ecd2f5498a1dee7f8"
+checksum = "063e6045c0e62079840579a7e47a355ae92f60eb74daaf156fb1e84ba164e63f"
 dependencies = [
  "strum_macros",
 ]
 
 [[package]]
 name = "strum_macros"
-version = "0.24.0"
+version = "0.24.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6878079b17446e4d3eba6192bb0a2950d5b14f0ed8424b852310e5a94345d0ef"
+checksum = "1e385be0d24f186b4ce2f9982191e7101bb737312ad61c1f2f984f34bcf85d59"
 dependencies = [
  "heck",
  "proc-macro2",
