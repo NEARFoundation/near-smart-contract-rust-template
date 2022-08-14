@@ -1,0 +1,78 @@
+[tasks.clean]
+clear = true
+script = """
+cargo clean
+rm -rf ./neardev/
+"""
+
+[tasks.test]
+clear = true
+script = """
+#!/usr/bin/env bash
+
+set -e
+DEFAULT_ARCH="$(rustc -vV | awk '/host:/ {print $2}')"
+cargo test --target $DEFAULT_ARCH
+"""
+
+[tasks.build]
+args = ["build", "--target", "wasm32-unknown-unknown", "--release"]
+command = "cargo"
+
+[tasks.deploy]
+dependencies = ["build"]
+script = """
+#!/usr/bin/env bash
+
+set -e
+WASM_PATH="$(find ./target/wasm32-unknown-unknown/release -maxdepth 1 -name "*.wasm")"
+
+near deploy \
+  --wasmFile $WASM_PATH \
+  --accountId "$1" \
+  --initFunction new \
+  --initArgs "$(./args.sh)"
+"""
+
+[tasks.dev-deploy]
+dependencies = ["build"]
+script = """
+#!/usr/bin/env bash
+
+set -e
+WASM_PATH="$(find ./target/wasm32-unknown-unknown/release -maxdepth 1 -name "*.wasm")"
+
+echo near dev-deploy \
+  --wasmFile $WASM_PATH \
+  "$@"
+
+echo near call "$(<./neardev/dev-account)" new "$(./args.sh)" \
+  --accountId "$(<./neardev/dev-account)"
+"""
+
+[tasks.call]
+script = """
+#!/usr/bin/env bash
+
+set -e
+[ -f ./neardev/dev-account ] || (echo "Contract must be deployed"; false)
+near call "$(<./neardev/dev-account)" "$@"
+"""
+
+[tasks.call-self]
+script = """
+#!/usr/bin/env bash
+
+set -e
+[ -f ./neardev/dev-account ] || (echo "Contract must be deployed"; false)
+near call "$(<./neardev/dev-account)" "$@" --accountId "$(<./neardev/dev-account)"
+"""
+
+[tasks.view]
+script = """
+#!/usr/bin/env bash
+
+set -e
+[ -f ./neardev/dev-account ] || (echo "Contract must be deployed"; false)
+near view "$(<./neardev/dev-account)" "$@"
+"""

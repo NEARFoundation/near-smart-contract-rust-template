@@ -2,7 +2,7 @@ mod contract;
 pub use contract::*;
 
 #[allow(dead_code, unused)]
-#[cfg(test)]
+#[cfg(all(test, not(target_arch = "wasm32")))]
 mod tests {
     use near_sdk::{test_utils::*, testing_env, AccountId, ONE_NEAR};
 
