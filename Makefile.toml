@@ -42,11 +42,11 @@ script = """
 set -e
 WASM_PATH="$(find ./target/wasm32-unknown-unknown/release -maxdepth 1 -name "*.wasm")"
 
-echo near dev-deploy \
+near dev-deploy \
   --wasmFile $WASM_PATH \
   "$@"
 
-echo near call "$(<./neardev/dev-account)" new "$(./args.sh)" \
+near call "$(<./neardev/dev-account)" new "$(./args.sh)" \
   --accountId "$(<./neardev/dev-account)"
 """
 
