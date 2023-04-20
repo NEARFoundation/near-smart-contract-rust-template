@@ -4,7 +4,7 @@ Project structure for writing smart contracts for NEAR in Rust.
 
 # Required Software
 
-- [Rust ^1.60 + Cargo](https://www.rust-lang.org/tools/install)
+- [Rust & Cargo](https://www.rust-lang.org/tools/install)
   - With the WASM target installed: `rustup target add wasm32-unknown-unknown`
   - [cargo-make](https://crates.io/crates/cargo-make): `cargo install cargo-make`
 - [Node.js](https://nodejs.org/)
