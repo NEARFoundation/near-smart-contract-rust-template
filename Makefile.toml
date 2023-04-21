@@ -3,6 +3,7 @@ clear = true
 script = """
 cargo clean
 rm -rf ./neardev/
+rm -rf ./deploy/
 """
 
 [tasks.test]
@@ -19,13 +20,28 @@ cargo test --target $DEFAULT_ARCH
 args = ["build", "--target", "wasm32-unknown-unknown", "--release"]
 command = "cargo"
 
-[tasks.deploy]
+# Prepare for prod deployment by optimizing the WASM file for size
+[tasks.optimize]
 dependencies = ["build"]
 script = """
 #!/usr/bin/env bash
 
 set -e
 WASM_PATH="$(find ./target/wasm32-unknown-unknown/release -maxdepth 1 -name "*.wasm")"
+
+mkdir -p ./deploy/
+wasm-tools strip "$WASM_PATH" > "./deploy/$(basename $WASM_PATH)"
+# TODO: Figure out which wasm-opt flags don't break contracts
+"""
+
+[tasks.deploy]
+dependencies = ["optimize"]
+script = """
+#!/usr/bin/env bash
+
+set -e
+RAW_WASM_PATH="$(find ./target/wasm32-unknown-unknown/release -maxdepth 1 -name "*.wasm")"
+WASM_PATH="./deploy/$(basename $RAW_WASM_PATH)"
 
 near deploy \
   --wasmFile $WASM_PATH \
