@@ -4,12 +4,7 @@ use near_sdk::{
     store::Vector,
     BorshStorageKey, PanicOnDefault,
 };
-use near_sdk_contract_tools::{
-    event,
-    owner::{Owner, OwnerExternal},
-    standard::nep297::Event,
-    Owner,
-};
+use near_sdk_contract_tools::{event, owner::*, standard::nep297::Event, Owner};
 
 #[allow(unused)]
 #[derive(BorshStorageKey, BorshSerialize)]

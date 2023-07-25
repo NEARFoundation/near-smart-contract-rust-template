@@ -823,9 +823,9 @@ dependencies = [
 
 [[package]]
 name = "near-sdk-contract-tools"
-version = "0.7.2"
+version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0c93bad66fdda90840c5978bd14b0d2d1f8f17750739bc510cb959573a7e1821"
+checksum = "e827a5f335e7d1ee225b8608917439c6fd32ca86dd72d2353eaf6e2d01c842f1"
 dependencies = [
  "near-sdk",
  "near-sdk-contract-tools-macros",
@@ -836,9 +836,9 @@ dependencies = [
 
 [[package]]
 name = "near-sdk-contract-tools-macros"
-version = "0.7.2"
+version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "60ddc1205bd9030c001421b88066fdcdfb54054a389b199cc8de24bc76b45915"
+checksum = "2daeca99af43caa5cf1faa492ba832f578a08e1a4457e038c835bc8585e858fb"
 dependencies = [
  "base64 0.13.1",
  "darling",

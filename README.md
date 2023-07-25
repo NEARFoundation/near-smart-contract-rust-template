@@ -71,4 +71,4 @@ Deploys the most recently built WASM binary to the dev account in `neardev/`, or
 
 # Authors
 
-- Jacob Lindahl <jacob@near.foundation> [@sudo_build](https://twitter.com/sudo_build)
+- Jacob Lindahl <jacob.lindahl@near.org> [@sudo_build](https://twitter.com/sudo_build)
