@@ -31,8 +31,8 @@ WASM_PATH="$(find ./target/wasm32-unknown-unknown/release -maxdepth 1 -name "*.w
 
 mkdir -p ./deploy/
 wasm-tools strip "$WASM_PATH" > "./deploy/$(basename $WASM_PATH)"
-# TODO: Figure out which wasm-opt flags don't break contracts
 """
+# TODO: Figure out which wasm-opt flags don't break contracts
 
 [tasks.deploy]
 dependencies = ["optimize"]
