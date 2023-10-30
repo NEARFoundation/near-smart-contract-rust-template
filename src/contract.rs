@@ -46,7 +46,7 @@ impl Contract {
     }
 
     pub fn set_value(&mut self, value: u32) {
-        Self::require_owner();
+        self.assert_owner();
 
         self.history.push(value);
         let old_value = self.value;

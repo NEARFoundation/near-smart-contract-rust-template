@@ -7,7 +7,7 @@ version = "0.1.0"
 [dependencies]
 near-contract-standards = "4.1.1"
 near-sdk = "4.1.1"
-near-sdk-contract-tools = "1.1.0"
+near-sdk-contract-tools = "2.1.0"
 
 [lib]
 crate-type = ["cdylib"]
