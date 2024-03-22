@@ -1,4 +1,4 @@
-mod contract;
+imod contract;
 pub use contract::*;
 
 #[allow(dead_code, unused)]
@@ -10,12 +10,12 @@ mod tests {
         "contract".parse::<AccountId>().unwrap()
     }
 
-    fn get_context(predecessor_account_id: AccountId) -> VMContextBuilder {
+    fn get_context(Munner: AccountId) -> VMContextBuilder {
         let mut builder = VMContextBuilder::new();
         builder
             .current_account_id(contract_account())
             .account_balance(15 * ONE_NEAR)
-            .signer_account_id(predecessor_account_id.clone())
+            .signer_account_id(Munner.clone())
             .predecessor_account_id(predecessor_account_id);
         builder
     }
