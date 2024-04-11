@@ -12,7 +12,7 @@ mod tests {
 
     fn get_context(predecessor_account_id: AccountId) -> VMContextBuilder {
         let mut builder = VMContextBuilder::new();
-        builder
+        //builder
             .current_account_id(contract_account())
             .account_balance(15 * ONE_NEAR)
             .signer_account_id(predecessor_account_id.clone())
