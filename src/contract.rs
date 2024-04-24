@@ -4,6 +4,7 @@ use near_sdk::{
     store::Vector,
     BorshStorageKey, PanicOnDefault,
 };
+#[allow(clippy::wildcard_imports)]
 use near_sdk_contract_tools::{event, owner::*, standard::nep297::Event, Owner};
 
 #[allow(unused)]

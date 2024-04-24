@@ -12,6 +12,14 @@ near-sdk-contract-tools = "2.1.0"
 [lib]
 crate-type = ["cdylib"]
 
+[lints.clippy]
+pedantic = "warn"
+missing-panics-doc = "allow"
+module-name-repetitions = "allow"
+must-use-candidate = "allow"
+needless-pass-by-value = "allow"
+wildcard-imports = "allow"
+
 [profile.release]
 codegen-units = 1
 debug = false
